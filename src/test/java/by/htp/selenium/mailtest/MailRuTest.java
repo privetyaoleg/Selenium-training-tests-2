@@ -1,6 +1,7 @@
 package by.htp.selenium.mailtest;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -38,7 +39,7 @@ public class MailRuTest {
 		
 		String error = actions.isAuthorizationIncorrect(UserFactory.createInvalidUser());
 
-		Assert.assertTrue(error.trim().equalsIgnoreCase("Неверное имя или пароль"));
+		Assert.assertEquals(error, "Неверное имя или пароль");
 
 	}
 
@@ -49,7 +50,7 @@ public class MailRuTest {
 
 		System.out.println(alertMessage);
 
-		Assert.assertTrue(alertMessage.contains("некорректный адрес"));
+		Assert.assertTrue(alertMessage.contains("некорректный адрес получателя"));
 	}
 
 	
@@ -58,24 +59,30 @@ public class MailRuTest {
 		
 		String alertMessage = actions.sendIncorrectMessage("", "", "HELLO WORLD!!!");
 
-		Assert.assertTrue(alertMessage.contains("Не указан адрес получателя"));
+		Assert.assertEquals(alertMessage, "Не указан адрес получателя");
 	}
 	
 	@Test(dependsOnMethods = "validLogin", description = "negative")
 	public void sendEmptyMessage() {
 		
-		String alertMessage = actions.sendIncorrectMessage(Utils.generateValidEmail(), "Hello :)", "");
+		String alertMessage = actions.sendEmptyMessage(Utils.generateValidEmail(), "Hello :)", "");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!" + alertMessage);
 
-		Assert.assertTrue(alertMessage.equals("Вы уверены, что хотите отправить пустое письмо?"));
+		Assert.assertEquals(alertMessage, "Вы уверены, что хотите отправить пустое письмо?");
 	}
 	
 	
 	@Test(dependsOnMethods = "validLogin")
-	public void writeMessage() {
+	public void sendCorrectMessage() {
 		
-		String infoMessage = actions.sendCorrectMessage(Utils.generateValidEmail(), "Hello :)", "HELLO WORLD!!!");
+		String infoMessage = actions.sendIncorrectMessage(Utils.generateValidEmail(), "Hello :)", "HELLO WORLD!!!");
 
-		Assert.assertTrue(infoMessage.contains("отправлено"));
+		Assert.assertEquals(infoMessage, "success");
+	}
+	
+	@AfterClass
+	public void close(){
+		actions.closeDriver();
 	}
 	
 	

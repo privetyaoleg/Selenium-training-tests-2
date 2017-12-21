@@ -42,7 +42,9 @@ public class WriteNewMessagePage extends AbstractPage{
 	
 	
 	public void filingFields(String recipient, String subject, String message){
-	
+//		Wait<WebDriver> wait = new WebDriverWait(driver, 5, 1000);
+//		wait.until(ExpectedConditions.textToBePresentInElement(subjectField, subject));
+			
 		recipientField.sendKeys(recipient);
 		Utils.sleepThread();
 		subjectField.sendKeys(subject);

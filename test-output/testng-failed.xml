@@ -8,10 +8,8 @@
           <include name="writeMessageIncorrectEmail"/>
           <include name="setUp"/>
           <include name="sendEmptyMessage"/>
-          <include name="writeMessage"/>
           <include name="validLogin"/>
-          <include name="invalidLogin"/>
-          <include name="sendMessageWithoutEmail"/>
+          <include name="close"/>
         </methods>
       </class> <!-- by.htp.selenium.mailtest.MailRuTest -->
     </classes>
