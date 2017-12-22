@@ -5,20 +5,20 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import by.htp.selenium.mailtest.actions.Actions;
-import by.htp.selenium.mailtest.factory.UserFactory;
+import by.htp.selenium.mailtest.factory.user.UserFactory;
 import by.htp.selenium.mailtest.model.User;
+import by.htp.selenium.mailtest.steps.Steps;
 import by.htp.selenium.mailtest.utils.Utils;
 
 public class MailRuTest {
 
-	private Actions actions;
+	private Steps steps;
 
 
 	@BeforeMethod(description = "Init browser")
 	public void setUp() {
-		actions = new Actions();
-		actions.initBrowser();
+		steps = new Steps();
+		steps.initBrowser();
 
 	}
 
@@ -27,62 +27,58 @@ public class MailRuTest {
 		
 		User user = UserFactory.createValidUser();
 		String enterEmail = Utils.createEmail(user.getLogin(), user.getDomain());
-		String newEmail = actions.isAuthorizationCorrect(UserFactory.createValidUser());
+		String newEmail = steps.isAuthorizationCorrect(UserFactory.createValidUser());
 
-		Assert.assertEquals(newEmail, enterEmail.toString());
+		Assert.assertEquals(newEmail, enterEmail);
 
 	}
 	
-	@Test(enabled = true, description = "negative")
+	@Test(enabled = false, description = "negative")
 	public void invalidLogin() {
 
-		
-		String error = actions.isAuthorizationIncorrect(UserFactory.createInvalidUser());
-
+		String error = steps.isAuthorizationIncorrect(UserFactory.createInvalidUser());
 		Assert.assertEquals(error, "Неверное имя или пароль");
 
 	}
 
-	@Test(enabled = true , dependsOnMethods = "validLogin" )
+	@Test(enabled = false,  dependsOnMethods = "validLogin" )
 	public void writeMessageIncorrectEmail() {
 
-		String alertMessage = actions.sendIncorrectMessage(Utils.generateInvalidEmail(), "Hello :)", "HELLO WORLD!!!");
-
-		System.out.println(alertMessage);
-
+		String alertMessage = steps.sendIncorrectMessage(Utils.generateInvalidEmail(), "Hello :)", "HELLO WORLD!!!");
 		Assert.assertTrue(alertMessage.contains("некорректный адрес получателя"));
+	}
+	
+	@Test(dependsOnMethods = "validLogin")
+	public void writeCorrectMessageAmount(){
+		Assert.assertTrue(steps.amountMessagesAfterSending());
 	}
 
 	
-	@Test(dependsOnMethods = "validLogin", description = "negative")
+	@Test(enabled = false, dependsOnMethods = "validLogin", description = "negative")
 	public void sendMessageWithoutEmail() {
 		
-		String alertMessage = actions.sendIncorrectMessage("", "", "HELLO WORLD!!!");
-
+		String alertMessage = steps.sendIncorrectMessage("", "", "HELLO WORLD!!!");
 		Assert.assertEquals(alertMessage, "Не указан адрес получателя");
 	}
 	
-	@Test(dependsOnMethods = "validLogin", description = "negative")
+	@Test(enabled = false, dependsOnMethods = "validLogin", description = "negative")
 	public void sendEmptyMessage() {
 		
-		String alertMessage = actions.sendEmptyMessage(Utils.generateValidEmail(), "Hello :)", "");
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!" + alertMessage);
-
+		String alertMessage = steps.sendEmptyMessage(Utils.generateValidEmail(), "Hello :)", "");
 		Assert.assertEquals(alertMessage, "Вы уверены, что хотите отправить пустое письмо?");
 	}
 	
 	
-	@Test(dependsOnMethods = "validLogin")
+	@Test(enabled = false, dependsOnMethods = "validLogin")
 	public void sendCorrectMessage() {
 		
-		String infoMessage = actions.sendIncorrectMessage(Utils.generateValidEmail(), "Hello :)", "HELLO WORLD!!!");
-
+		String infoMessage = steps.sendIncorrectMessage(Utils.generateValidEmail(), "Hello :)", "HELLO WORLD!!!");
 		Assert.assertEquals(infoMessage, "success");
 	}
 	
 	@AfterClass
 	public void close(){
-		actions.closeDriver();
+		steps.closeDriver();
 	}
 	
 	

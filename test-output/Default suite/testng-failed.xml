@@ -5,9 +5,8 @@
     <classes>
       <class name="by.htp.selenium.mailtest.MailRuTest">
         <methods>
-          <include name="writeMessageIncorrectEmail"/>
           <include name="setUp"/>
-          <include name="sendEmptyMessage"/>
+          <include name="writeCorrectMessageAmount"/>
           <include name="validLogin"/>
           <include name="close"/>
         </methods>

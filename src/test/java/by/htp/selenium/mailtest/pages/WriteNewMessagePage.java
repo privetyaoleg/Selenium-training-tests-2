@@ -41,9 +41,9 @@ public class WriteNewMessagePage extends AbstractPage{
 	}
 	
 	
-	public void filingFields(String recipient, String subject, String message){
+	public void filingFieldsAndClickSend(String recipient, String subject, String message){
 //		Wait<WebDriver> wait = new WebDriverWait(driver, 5, 1000);
-//		wait.until(ExpectedConditions.textToBePresentInElement(subjectField, subject));
+//		wait.until(ExpectedConditions.textToBe(locator, value));
 			
 		recipientField.sendKeys(recipient);
 		Utils.sleepThread();
@@ -51,15 +51,13 @@ public class WriteNewMessagePage extends AbstractPage{
 		Utils.sleepThread();
 	
 		messageFrame(message);
+		Utils.sleepThread();
+		sendButton.click();
 
 	}
 	
-	public void clickSendButton(){
-		WebElement sendButton = driver.findElement(By.xpath(BUTTON_SEND_XPATH));
-		sendButton.click();
-	}
 	
-	public void messageFrame(String message){		
+	private void messageFrame(String message){		
 		driver.switchTo().frame(driver.findElement(By.xpath(FIELD_MESSAGE_BODY_XPATH)));
 		driver.findElement(By.tagName("body")).sendKeys(message);
 		driver.switchTo().defaultContent();

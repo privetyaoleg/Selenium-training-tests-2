@@ -38,6 +38,20 @@ public class Utils {
 
 		return randomEmail.toString();	
 	}
+	
+	public static int getIntFromString(String str){
+		
+    	StringBuilder xx = new StringBuilder();
+    	char[] ar = str.toCharArray();
+    	
+    	for (char c : ar) {
+			if(c >= 48 && c<=57){
+				xx.append(c);
+			}
+		}
+    	
+    	return Integer.parseInt(xx.toString());
+	}
 
 	
 	public static void sleepThread(){
