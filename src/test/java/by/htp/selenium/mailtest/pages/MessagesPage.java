@@ -22,7 +22,6 @@ public class MessagesPage extends AbstractPage{
 	
 	public MessagesPage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(this.driver, this);
 	}
 
 	@Override
@@ -30,8 +29,9 @@ public class MessagesPage extends AbstractPage{
 		driver.get(BASE_URL);		
 	}
 	
-	public void clickOnWriteNewMessage(){		
+	public NewMessagePage clickWriteNewMessage(){		
 		buttonNewMessage.click();
+		return new NewMessagePage(driver);
 	}
 	
 	public String getAmountSentMessages(){

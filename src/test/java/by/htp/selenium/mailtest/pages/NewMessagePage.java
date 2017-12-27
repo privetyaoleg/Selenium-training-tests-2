@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import by.htp.selenium.mailtest.utils.Utils;
 
-public class WriteNewMessagePage extends AbstractPage{
+public class NewMessagePage extends AbstractPage{
 	
 	private final String BASE_URL = "https://e.mail.ru/compose/?1513570232116";
 	
@@ -30,34 +30,37 @@ public class WriteNewMessagePage extends AbstractPage{
 	private WebElement subjectField;
 	
 	
-	public WriteNewMessagePage(WebDriver driver) {
+	public NewMessagePage(WebDriver driver) {
 		super(driver);
 	}
 
 	@Override
 	public void openPage() {
 		driver.navigate().to(BASE_URL);
-		PageFactory.initElements(this.driver, this);
 	}
 	
 	
 	public void filingFieldsAndClickSend(String recipient, String subject, String message){
+		
 //		Wait<WebDriver> wait = new WebDriverWait(driver, 5, 1000);
-//		wait.until(ExpectedConditions.textToBe(locator, value));
-			
+//		wait.until(ExpectedConditions.alertIsPresent());
+		
+		Utils.sleepThread();
 		recipientField.sendKeys(recipient);
+		
 		Utils.sleepThread();
 		subjectField.sendKeys(subject);
-		Utils.sleepThread();
 	
+		Utils.sleepThread();
 		messageFrame(message);
+
 		Utils.sleepThread();
 		sendButton.click();
 
 	}
 	
 	
-	private void messageFrame(String message){		
+	private void messageFrame(String message){	
 		driver.switchTo().frame(driver.findElement(By.xpath(FIELD_MESSAGE_BODY_XPATH)));
 		driver.findElement(By.tagName("body")).sendKeys(message);
 		driver.switchTo().defaultContent();

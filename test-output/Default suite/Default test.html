@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/0/2</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 22 23:58:10 EET 2017</td>
+<td>Started on:</td><td>Sat Dec 23 23:24:51 EET 2017</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (123 ms)</td>
+<tr><td>Total time:</td><td>134 seconds (134814 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,250 +67,48 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='by.htp.selenium.mailtest.MailRuTest.setUp()'><b>setUp</b><br>Test class: by.htp.selenium.mailtest.MailRuTest<br>Test method: Init browser</td>
-<td><div><pre>java.lang.IllegalStateException: The driver executable does not exist: C:\driver\operadriver.exe
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:534)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
-	at org.openqa.selenium.opera.OperaDriverService.access$000(OperaDriverService.java:32)
-	at org.openqa.selenium.opera.OperaDriverService$Builder.findDefaultExecutable(OperaDriverService.java:118)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:339)
-	at org.openqa.selenium.opera.OperaDriverService.createDefaultService(OperaDriverService.java:82)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:115)
-	at by.htp.selenium.mailtest.factory.driver.OperaDriverCreator.factoryMethod(OperaDriverCreator.java:18)
-	at by.htp.selenium.mailtest.driver.DriverSingleton.getDriver(DriverSingleton.java:21)
-	at by.htp.selenium.mailtest.steps.Steps.initBrowser(Steps.java:23)
-	at by.htp.selenium.mailtest.MailRuTest.setUp(MailRuTest.java:21)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace14348096", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace14348096'><pre>java.lang.IllegalStateException: The driver executable does not exist: C:\driver\operadriver.exe
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:534)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
-	at org.openqa.selenium.opera.OperaDriverService.access$000(OperaDriverService.java:32)
-	at org.openqa.selenium.opera.OperaDriverService$Builder.findDefaultExecutable(OperaDriverService.java:118)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:339)
-	at org.openqa.selenium.opera.OperaDriverService.createDefaultService(OperaDriverService.java:82)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:115)
-	at by.htp.selenium.mailtest.factory.driver.OperaDriverCreator.factoryMethod(OperaDriverCreator.java:18)
-	at by.htp.selenium.mailtest.driver.DriverSingleton.getDriver(DriverSingleton.java:21)
-	at by.htp.selenium.mailtest.steps.Steps.initBrowser(Steps.java:23)
-	at by.htp.selenium.mailtest.MailRuTest.setUp(MailRuTest.java:21)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>by.htp.selenium.mailtest.MailRuTest@23a2f9</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='by.htp.selenium.mailtest.MailRuTest.close()'><b>close</b><br>Test class: by.htp.selenium.mailtest.MailRuTest</td>
+<td title='by.htp.selenium.mailtest.MailRuTest.invalidLogin()'><b>invalidLogin</b><br>Test class: by.htp.selenium.mailtest.MailRuTest<br>Test method: negative</td>
 <td></td>
-<td>0</td>
-<td>by.htp.selenium.mailtest.MailRuTest@23a2f9</td></tr>
-</table><p>
-<table width='100%' border='1' class='invocation-skipped'>
-<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
+<td>8</td>
+<td>by.htp.selenium.mailtest.MailRuTest@1565ec2</td></tr>
+<tr>
+<td title='by.htp.selenium.mailtest.MailRuTest.sendCorrectMessage()'><b>sendCorrectMessage</b><br>Test class: by.htp.selenium.mailtest.MailRuTest</td>
+<td></td>
+<td>20</td>
+<td>by.htp.selenium.mailtest.MailRuTest@1565ec2</td></tr>
+<tr>
+<td title='by.htp.selenium.mailtest.MailRuTest.sendEmptyMessage()'><b>sendEmptyMessage</b><br>Test class: by.htp.selenium.mailtest.MailRuTest<br>Test method: negative</td>
+<td></td>
+<td>19</td>
+<td>by.htp.selenium.mailtest.MailRuTest@1565ec2</td></tr>
+<tr>
+<td title='by.htp.selenium.mailtest.MailRuTest.sendMessageWithoutEmail()'><b>sendMessageWithoutEmail</b><br>Test class: by.htp.selenium.mailtest.MailRuTest<br>Test method: negative</td>
+<td></td>
+<td>15</td>
+<td>by.htp.selenium.mailtest.MailRuTest@1565ec2</td></tr>
 <tr>
 <td title='by.htp.selenium.mailtest.MailRuTest.validLogin()'><b>validLogin</b><br>Test class: by.htp.selenium.mailtest.MailRuTest<br>Test method: possitive</td>
-<td><div><pre>java.lang.IllegalStateException: The driver executable does not exist: C:\driver\operadriver.exe
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:534)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
-	at org.openqa.selenium.opera.OperaDriverService.access$000(OperaDriverService.java:32)
-	at org.openqa.selenium.opera.OperaDriverService$Builder.findDefaultExecutable(OperaDriverService.java:118)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:339)
-	at org.openqa.selenium.opera.OperaDriverService.createDefaultService(OperaDriverService.java:82)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:115)
-	at by.htp.selenium.mailtest.factory.driver.OperaDriverCreator.factoryMethod(OperaDriverCreator.java:18)
-	at by.htp.selenium.mailtest.driver.DriverSingleton.getDriver(DriverSingleton.java:21)
-	at by.htp.selenium.mailtest.steps.Steps.initBrowser(Steps.java:23)
-	at by.htp.selenium.mailtest.MailRuTest.setUp(MailRuTest.java:21)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace15996468", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace15996468'><pre>java.lang.IllegalStateException: The driver executable does not exist: C:\driver\operadriver.exe
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:534)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:136)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:131)
-	at org.openqa.selenium.opera.OperaDriverService.access$000(OperaDriverService.java:32)
-	at org.openqa.selenium.opera.OperaDriverService$Builder.findDefaultExecutable(OperaDriverService.java:118)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:339)
-	at org.openqa.selenium.opera.OperaDriverService.createDefaultService(OperaDriverService.java:82)
-	at org.openqa.selenium.opera.OperaDriver.&lt;init&gt;(OperaDriver.java:115)
-	at by.htp.selenium.mailtest.factory.driver.OperaDriverCreator.factoryMethod(OperaDriverCreator.java:18)
-	at by.htp.selenium.mailtest.driver.DriverSingleton.getDriver(DriverSingleton.java:21)
-	at by.htp.selenium.mailtest.steps.Steps.initBrowser(Steps.java:23)
-	at by.htp.selenium.mailtest.MailRuTest.setUp(MailRuTest.java:21)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:523)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:224)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:599)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>by.htp.selenium.mailtest.MailRuTest@23a2f9</td></tr>
+<td></td>
+<td>9</td>
+<td>by.htp.selenium.mailtest.MailRuTest@1565ec2</td></tr>
 <tr>
 <td title='by.htp.selenium.mailtest.MailRuTest.writeCorrectMessageAmount()'><b>writeCorrectMessageAmount</b><br>Test class: by.htp.selenium.mailtest.MailRuTest</td>
-<td><div><pre>java.lang.Throwable: Method MailRuTest.writeCorrectMessageAmount()[pri:0, instance:by.htp.selenium.mailtest.MailRuTest@23a2f9] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div><a href='#' onClick='toggleBox("stack-trace4015549", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace4015549'><pre>java.lang.Throwable: Method MailRuTest.writeCorrectMessageAmount()[pri:0, instance:by.htp.selenium.mailtest.MailRuTest@23a2f9] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1084)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:744)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
-	at org.testng.TestNG.runSuites(TestNG.java:1144)
-	at org.testng.TestNG.run(TestNG.java:1115)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>0</td>
-<td>null</td></tr>
+<td></td>
+<td>16</td>
+<td>by.htp.selenium.mailtest.MailRuTest@1565ec2</td></tr>
+<tr>
+<td title='by.htp.selenium.mailtest.MailRuTest.writeMessageIncorrectEmail()'><b>writeMessageIncorrectEmail</b><br>Test class: by.htp.selenium.mailtest.MailRuTest</td>
+<td></td>
+<td>18</td>
+<td>by.htp.selenium.mailtest.MailRuTest@1565ec2</td></tr>
 </table><p>
 </body>
 </html>

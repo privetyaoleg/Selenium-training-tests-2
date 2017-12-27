@@ -9,10 +9,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import by.htp.selenium.mailtest.driver.DriverSingleton;
+import by.htp.selenium.mailtest.init.Init;
 import by.htp.selenium.mailtest.model.User;
 import by.htp.selenium.mailtest.pages.MainPage;
 import by.htp.selenium.mailtest.pages.MessagesPage;
-import by.htp.selenium.mailtest.pages.WriteNewMessagePage;
+import by.htp.selenium.mailtest.pages.NewMessagePage;
 import by.htp.selenium.mailtest.utils.Utils;
 
 public class Steps {
@@ -20,11 +21,12 @@ public class Steps {
 	private WebDriver driver;
 
 	public void initBrowser() {
-		driver = DriverSingleton.getDriver();
+		Init.init();
+		driver = Init.driver;
 	}
 
 	public void closeDriver() {
-		DriverSingleton.closeDriver();
+		driver.quit();
 	}
 
 	public void loginMail(User user) {
@@ -51,24 +53,20 @@ public class Steps {
 
 		loginMail(user);
 		Utils.sleepThread();
-		String currentEmail = driver.findElement(By.id("PH_user-email"))
-				.getText();
+		String currentEmail = driver.findElement(By.id("PH_user-email")).getText();
 		return currentEmail;
 	}
 
-	public String sendIncorrectMessage(String recipient, String subject,
-			String message) {
+	public String sendIncorrectMessage(String recipient, String subject, String message) {
 
 		filingFields(recipient, subject, message);
 		return getAlertMessageAndEsc();
-
 	}
 
 	public String sendCorrectMessage(String recipient, String subject, String message) {
 
 		filingFields(recipient, subject, message);
 		return driver.findElement(By.xpath("//div[@class = 'message-sent__title']")).getText();
-
 	}
 
 	public String sendEmptyMessage(String recipient, String subject, String message){
@@ -123,7 +121,7 @@ public class Steps {
 
 	private void filingFields(String recipient, String subject, String message) {
 
-		WriteNewMessagePage writeNewMessagePage = new WriteNewMessagePage(driver);
+		NewMessagePage writeNewMessagePage = new NewMessagePage(driver);
 		writeNewMessagePage.openPage();
 
 		tryAlertMessageAndOk();

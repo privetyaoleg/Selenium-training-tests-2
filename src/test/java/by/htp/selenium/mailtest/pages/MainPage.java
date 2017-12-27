@@ -36,9 +36,6 @@ public class MainPage extends AbstractPage{
 	private WebElement errorMessage;
 	
 	
-	private WebElement domain;
-	
-	
 	
 	
 	public MainPage(WebDriver driver) {
@@ -46,15 +43,16 @@ public class MainPage extends AbstractPage{
 		PageFactory.initElements(this.driver, this);	
 	}
 	
-	public void login(User user){
-		
-		this.domain = driver.findElement(By.xpath(Utils.xpathByDomen(user.getDomain())));
+	public MessagesPage login(User user){
 		
 		domainMenu.click();
-		this.domain.click();
+		driver.findElement(By.xpath(Utils.xpathByDomen(user.getDomain()))).click();
 		loginField.sendKeys(user.getLogin());
 		passwordField.sendKeys(user.getPassword());
+		
 		submitButton.click();
+		
+		return new MessagesPage(driver);
 	}
 	
 	public String getErrorMessage(){

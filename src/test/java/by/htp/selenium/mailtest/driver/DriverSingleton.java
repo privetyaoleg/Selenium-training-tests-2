@@ -1,11 +1,12 @@
 package by.htp.selenium.mailtest.driver;
-
+import static by.htp.selenium.mailtest.init.Init.*;
 import org.openqa.selenium.WebDriver;
 
 import by.htp.selenium.mailtest.factory.driver.ChromeDriverCreator;
 import by.htp.selenium.mailtest.factory.driver.FirefoxDriverCreator;
 import by.htp.selenium.mailtest.factory.driver.OperaDriverCreator;
 import by.htp.selenium.mailtest.factory.driver.WebDriverCreator;
+
 
 public class DriverSingleton {
 
@@ -16,6 +17,8 @@ public class DriverSingleton {
 
 
     public static WebDriver getDriver(){
+    	
+    	
         if (null == driver){        
             WebDriverCreator creator = new ChromeDriverCreator(); 
             driver = creator.factoryMethod();

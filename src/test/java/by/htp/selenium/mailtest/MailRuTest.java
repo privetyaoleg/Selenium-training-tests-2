@@ -33,7 +33,7 @@ public class MailRuTest {
 
 	}
 	
-	@Test(enabled = false, description = "negative")
+	@Test(enabled = true, description = "negative")
 	public void invalidLogin() {
 
 		String error = steps.isAuthorizationIncorrect(UserFactory.createInvalidUser());
@@ -41,7 +41,7 @@ public class MailRuTest {
 
 	}
 
-	@Test(enabled = false,  dependsOnMethods = "validLogin" )
+	@Test(enabled = true,  dependsOnMethods = "validLogin" )
 	public void writeMessageIncorrectEmail() {
 
 		String alertMessage = steps.sendIncorrectMessage(Utils.generateInvalidEmail(), "Hello :)", "HELLO WORLD!!!");
@@ -54,14 +54,14 @@ public class MailRuTest {
 	}
 
 	
-	@Test(enabled = false, dependsOnMethods = "validLogin", description = "negative")
+	@Test(enabled = true, dependsOnMethods = "validLogin", description = "negative")
 	public void sendMessageWithoutEmail() {
 		
 		String alertMessage = steps.sendIncorrectMessage("", "", "HELLO WORLD!!!");
 		Assert.assertEquals(alertMessage, "Не указан адрес получателя");
 	}
 	
-	@Test(enabled = false, dependsOnMethods = "validLogin", description = "negative")
+	@Test(enabled = true, dependsOnMethods = "validLogin", description = "negative")
 	public void sendEmptyMessage() {
 		
 		String alertMessage = steps.sendEmptyMessage(Utils.generateValidEmail(), "Hello :)", "");
@@ -69,7 +69,7 @@ public class MailRuTest {
 	}
 	
 	
-	@Test(enabled = false, dependsOnMethods = "validLogin")
+	@Test(enabled = true, dependsOnMethods = "validLogin")
 	public void sendCorrectMessage() {
 		
 		String infoMessage = steps.sendIncorrectMessage(Utils.generateValidEmail(), "Hello :)", "HELLO WORLD!!!");
